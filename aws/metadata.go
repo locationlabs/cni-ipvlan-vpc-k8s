@@ -72,7 +72,7 @@ func (c *awsclient) getInterface(mac string) (Interface, error) {
 	metadataParser := func(metadataId string, modifer func(*Interface, string) error) error {
 		metadata, err := get(metadataId)
 		if err != nil {
-			log.Printf("Error calling metadata service: %v", err)
+			log.Printf("Error calling metadata service: content: %s err: %v", metadata, err)
 			return err
 		}
 		if metadata != "" {
